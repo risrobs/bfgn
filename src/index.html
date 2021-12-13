@@ -1,38 +1,38 @@
 <!DOCTYPE html>
-<html>
-    <body>
-        <div class=".image" 
-             style="text-align: center; 
-                    margin-top: 5em;">
-            <!-- Image to be enlarged and
-                onclick() function call-->
-            <img src=
+<head>
+	<title>Image Resize JS</title>
+</head>
+<body>
+	<div class="container" style="text-align: center; margin-top: 5em;">
+	<!-- Image to be enlarged and onclick() function call-->
+	<img
+		src=
 "https://media.geeksforgeeks.org/wp-content/uploads/geeksforgeeks-6.png"
-                 onclick="enlargeImg()" 
-                 id=".image" />
-            <br />
-            <br />
-            <br />
-            <!-- Button to reset the Image size -->
-            <button onclick="resetImg()">Reset
-          </button>
-        </div>
-  
-        <!-- script to set display property -->
-        <script>
-            img = document.getElementById("img1");
-            // Function to set image dimensions
-            function enlargeImg() {
-                img.style.width = "60%";
-                img.style.height = "auto";
-                img.style.transition = "width 0.5s ease";
-            }
-            // Function to reset image dimensions
-            function resetImg() {
-                img.style.width = "40%";
-                img.style.height = "auto";
-                img.style.transition = "width 0.5s ease";
-            }
-        </script>
-    </body>
+		onclick="enlargeImg()"
+		id="img1"
+	/>
+	<br /><br /><br />
+	<!-- Button to reset the Image size -->
+	<button onclick="resetImg()">Reset</button>
+	</div>
+
+	<!-- script to set display property -->
+	<script>
+	// Get the img object using its Id
+	img = document.getElementById("img1");
+	// Function to increase image size
+	function enlargeImg() {
+		// Set image size to 1.5 times original
+		img.style.transform = "scale(1.5)";
+		// Animation effect
+		img.style.transition = "transform 0.25s ease";
+	}
+	// Function to reset image size
+	function resetImg() {
+		// Set image size to original
+		img.style.transform = "scale(1)";
+		img.style.transition = "transform 0.25s ease";
+	}
+	</script>
+</body>
 </html>
